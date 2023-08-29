@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from flask import Flask, make_response
 from flask_migrate import Migrate
 
@@ -27,7 +29,7 @@ def pet_by_id(id):
         response_body = '<h1>404 pet not found</h1>'
         response = make_response(response_body, 404)
         return response
-
+    
     response_body = f'''
         <h1>Information for {pet.name}</h1>
         <h2>Pet Species is {pet.species}</h2>
